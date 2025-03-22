@@ -37,7 +37,7 @@ public class MouseManager : MonoBehaviour
         {
             Vector3 mouseDifference = clickStartLocation - Input.mousePosition;
             launchVector = new Vector3(
-                mouseDifference.x * 1f,
+                mouseDifference.x * -1f,
                 mouseDifference.y * 1.2f,
                 mouseDifference.y * -1.5f
                 );
