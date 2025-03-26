@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseManager : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class MouseManager : MonoBehaviour
     public Quaternion originalBallRotation;
     public Rigidbody ballRigidbody;
 
+    [Header("Lives")]
+    public LivesManager livesManager;
+
+    [Header("Scene to Load")]
+    public int sceneNumber;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +35,11 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (livesManager.lives <= 0)
+        {
+            SceneManager.LoadScene(sceneNumber);
+
+        }
         if (Input.GetMouseButtonDown(0))
         {
             clickStartLocation = Input.mousePosition;
@@ -56,6 +68,7 @@ public class MouseManager : MonoBehaviour
             ballTransform.position = originalBallPosition;
             ballTransform.rotation = originalBallRotation;
             ballRigidbody.isKinematic = true;
+            livesManager.RemoveLife();
         }
     }
 }

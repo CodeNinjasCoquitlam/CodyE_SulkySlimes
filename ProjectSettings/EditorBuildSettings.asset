@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SulkySlimes.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SulkySlimesLevelTwo.unity
+    guid: c70f06a5ede06d343aca23070ba60c92
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 8522245697ce6b84fb56993114a9d7fe
   m_configObjects: {}
